@@ -53,7 +53,7 @@
     #realizar programa que incluya match y llame a otras 3 funciones estas funciones deben incluir
     #if ,if else for y/0 while el programa debe ser recursivo
  #//////////////////////////////////////////////
-# def promedio(x,y,z):
+# def promedio(x,y,z):               #funcion
 #     return (x+y+z)/3
 # print(promedio(40, 17,22))
 # if promedio(40, 17,22) >=40:
@@ -82,6 +82,75 @@
 
 
 
+#
+
+# # print(list_prod[0]["nombre"])
+
+# # print(list_prod)
+
+# # # list_prod.insert(0,{"nombre":"paleta", "precio":14000})
+
+# # print(list_prod)
+
+#and: es una palabra clave en Python que verifica si un valor está presente en una lista, string o colección.
+#append: agregar un element al final de la lista
+#insert:Inserta un elemento en una posición específica de la lista
+#/////////////////////////////////////////
+# pop elimina el ultimo elemento de la lista  o se puedo poner la posicion del indice
+# frutas = ["manzana", "banana", "cereza"]
+# fruta_eliminada = frutas.pop(1)  # Elimina "banana"
+# print(fruta_eliminada)  # Salida: banana
+# print(frutas)  # Salida: ['manzana', 'cereza']
+#////////////////////////////////////////////
+# max: Busca el elemento con el mayor valor dentro de una lista, u otro conjunto de datos.
+
+# notas = [5.5, 6.8, 4.2]
+# mayor = max(notas)
+# print(mayor)  # Resultado: 6.8
+#/////////////////////////////////////////////////////
+# min: funcion para buscar el numero mas bajo  dentro de una coleccion
+# notas = [5.5, 6.8, 4.2]
+# menor = min(notas)
+# print(menor)  # Resultado: 4.2
+
+
+
+#/////////////////////////////////////////////
+#sum : suma automáticamente todos los elementos numéricos de una colección como una lista o tupla.
+# notas = [5.5, 6.0, 4.8]
+# resultado = sum(notas)
+# print(resultado)
+#//////////////////////////////////////////////////
+#items:
+#/////////////////////////////////////////////////////
+#enumerate:Con enumerate(cuando sí querés la posición)
+#for i, nombre in enumerate(nombres):
+   # print(f"{i}: {nombre}")
+#Acá i es el índice (posición), y nombre el contenido. ¡Esto te evita tener que poner i = 0 y usar i += 1
+#////////////////////////////////////////////////777
+#del:elimina clave -valor
+# Eliminar un elemento de una lista
+# my_list = [1, 2, 3]
+# del my_list[1]  # Elimina el elemento en el índice 1 (2)
+# print(my_list)  # [1, 3]
+
+# # del: Eliminar una clave de un diccionario
+# my_dict = {'a': 1, 'b': 2}
+# del my_dict['b']  # Elimina la clave 'b'
+# print(my_dict)  # {'a': 1}
+# len: cuantos elementos existen en una lista o dicc
+#///////////////////////////
+# clear: borra todo
+
+# my_list = [1, 2, 3]
+# my_list.clear()
+# print(my_list)  # []
+
+# # Vaciar un diccionario
+# my_dict = {'a': 1, 'b': 2}
+# my_dict.clear()
+# print(my_dict)  # {}
+#/////////////////////////////////////////////////
 # productos=["Zapato"]
 # precio=[20000]
 
@@ -95,18 +164,7 @@
 #     {"nombre":"pelota", 
 #      "precio":24000}
 # ]
-
-# # print(list_prod[0]["nombre"])
-
-# # print(list_prod)
-
-# # # list_prod.insert(0,{"nombre":"paleta", "precio":14000})
-
-# # print(list_prod)
-
-
-
-
+#
 # while True:
 #     try:
 #         print('''
@@ -303,3 +361,160 @@
 #                 print("Opcion invalida")
 #     except Exception as e:
 #         print("EL error es: ", e)
+
+#//////////////////////////////////////// repaso
+#verificacion si el caracter @ existe en mi variable
+
+# email=input("ingrese su email")
+# if "@"in email:
+#    print("la variable tiene formato email")
+# else:
+#    print("la variable no tiene formato email")
+# while True:
+#     try:
+#       pin=int(input("ingrese su pin"))
+#       break
+#     except Exception:
+#       print("solo numeros ")
+     # maipular lista donde  se cree un dato,actualizar,boraar
+
+ #validar que la clave tenga solo numeros enteros
+#la funcion len verifica el largo de un objeto
+# while True:
+#     try:
+#       pin=int(input("ingrese su clave"))
+#       break
+#     except Exception:
+#       print("solo numeros ")
+
+#///////////////////////////////////7
+#validar una clave por su largo por lo menos 5 caracteres
+# clave=(input("ingrese su clave"))
+
+# if len(clave)>=5 and len(clave)<=12:
+#    print("la clave tiene el largo correcto")
+# else:
+#    print("la clave ebe tener al menos 5 caracteres y menos de 12")
+
+#///////////////////////////////////////////////////////////77
+#verifico si tengo mayusculos o minusculas
+#isupper()
+#islower()
+
+# tienemayus=False
+# tieneminus=False
+#haemos un recorrido de cada letra en mi clave 
+# for letra in clave:
+#     if letra.isupper():
+#         tienemayus=True
+#     #verifico si la letra es mayuscula o minuscula
+#     if letra.islower():
+#         tieneminus=True
+
+# if tienemayus:
+#     print("tiene por lo menos una mayuscula")
+# else:
+#     print("no tiene por lo menos uns mayuscula")
+# if tieneminus:
+#     print("tiene por lo menwos  una minuscula")
+# else:
+#     print("no tiene por unaminuscula ")
+
+#/////////////////////////////////////////////////7
+
+#Perros de caza
+
+# perros={
+#     1:{"nombre": "osito",
+#        "raza": "poodle",
+#        "codigo" : "Dphsg"},
+
+#     2:{"nombre": "Spike"},
+#       "raza" : "bulterrier",
+#       "codigo": "dergE"
+# }
+
+
+# while True:
+#     try:
+#         print  ('''
+#             1.-Registrar perros
+#             2. Mostrar perros
+#             3.-actualizar
+#             4.- borrar
+#             5-salir
+                
+                
+#         ''')
+#         op=int(input("seleccione una opcion"))
+                
+#         match op:
+#             case 1:
+#                 nombre=input("ingrese el nombre del perro")
+#                 raza=input("ingrese raza")
+#                 codigo=input("ingrese el codigo")
+#                 if valida_pass(codigo):
+#                   largo=list(perros.keys())[-1]
+#                 #pasa a una lista .losnperos.keys (has una lista que existe en mi dic perros
+#                 #)
+#                   perros[largo+1]={"nombre": nombre,
+#                                  "raza": raza,
+#                                  "codigo": codigo}
+#                 else:
+#                     print("el parametro de la clave de incorrecto")
+#             case 2: 
+#                 mostrar_perros(perros)
+#             case 3:
+#                 mostrar_perros(perros)
+#                 actua=int(input("sellecione el perro aactualizar"))
+#                 print ('''
+#                     1.-nombrre
+#                     2.-Dato
+#                     3.-codigo
+#                        ''')
+#                 dato=input("que dato actualizara?")
+#                 match dato:
+#                     case 1:
+#                         nuevo=input("ingrese un nombre nuevo ")
+#                         perros[actua]["nombre"]=nuevo
+#                     case 2:
+#                         nuevo=input("ingrese raza nueva")
+#                         perros=
+
+#                 perros[actua]#accedo
+
+#             case 4:
+#                 mostrar_perros(perros)
+#                 borrar=int(input("seleccione el perro a borrar"))
+#                 del perros[borrar]
+#             case 5:
+#                 break
+#             case _:
+#                 print("opcion invalida")
+
+#     except Exception as e:
+#         print("el error es", e)
+        
+# '''
+# el codigo debe tener ,una mayuscula,una minuscula .un numero y un largo exacto de 6'''
+
+
+
+#crear gestion de vehiculos
+#crear programa para un parking de autos
+#se debe ingresar marca,año,patente,tipo
+
+# Marca:Tipo string,se debe tipear la Marca
+# Año:Tipo int,solo de 4 difitos enteros
+# patente:debe tener 4 letras minusculas y 2 digitos totaal de un largo de 6
+# tipo:S= sedan, c=camioneta, m=Moto 
+# se debe validar cada aspecto y tener un mantenedor para todos los vehiculos moyorizados
+# 1.- ingresar vehiculo
+# 2.- mostrar vehiculo
+# 3.- Actualizar vehiculo
+# 4.- borrar
+#5.- mostrar estadisticas: ulyimo vehiculo ingresado y total en garage
+# 6.- Salir
+
+#usar funciones con argumento para validar y para poder llamar 
+# las acciones dentro del menu

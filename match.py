@@ -189,64 +189,64 @@
 
 
 
-def clave_inf():
-    #Clave con intentos infinitos
-    clave=3344
-    password=int(input("Ingrese su pass :"))
-    while clave!=password:
-        print ("ERORR, clave invalida")
-        password=int(input("Ingrese su pass :"))
+# def clave_inf():
+#     #Clave con intentos infinitos
+#     clave=3344
+#     password=int(input("Ingrese su pass :"))
+#     while clave!=password:
+#         print ("ERORR, clave invalida")
+#         password=int(input("Ingrese su pass :"))
 
-    print("Bienvenido al sistema")
+#     print("Bienvenido al sistema")
 
-def azar():
+# def azar():
     
-    numeroAadivinar=random.randint(1,50)
+#     numeroAadivinar=random.randint(1,50)
 
-    num=int(input("Adivine el número"))
+#     num=int(input("Adivine el número"))
 
-    while num!=numeroAadivinar:
-        print(numeroAadivinar)
-        if num>numeroAadivinar:
-            print("El numero a adivinar es menor")
-        else:
-            print("El numero a adivinar es mayor")
-        num=int(input("Adivine el número"))
-    print("Le achuntaste!") 
+#     while num!=numeroAadivinar:
+#         print(numeroAadivinar)
+#         if num>numeroAadivinar:
+#             print("El numero a adivinar es menor")
+#         else:
+#             print("El numero a adivinar es mayor")
+#         num=int(input("Adivine el número"))
+#     print("Le achuntaste!") 
 
-def ruleta():
-    # # Ruleta rusa
+# def ruleta():
+#     # # Ruleta rusa
 
-    barril=random.randint(1,6)
-    rul=int(input("Dispare : "))
+#     barril=random.randint(1,6)
+#     rul=int(input("Dispare : "))
 
-    while rul!=barril:
-        rul=int(input("Dispare"))
-    print("BANG!!!")
+#     while rul!=barril:
+#         rul=int(input("Dispare"))
+#     print("BANG!!!")
     
 
-def menu_nuevo():
-    while True:
-        op=int(input('''
-                Seleccione una opcion
-                1.-Clave con intentos infinitos
-                2.- NUmero al azar
-                3.-Ruleta Rusa
-                4.-Salir
-                '''))   
-        match op:
-            case 1:
-                clave_inf()
-            case 2:
-                azar()
-            case 3:
-                ruleta()
-            case 4:
-                break
-            case _:
-                print("Opcion no valida")
+# def menu_nuevo():
+#     while True:
+#         op=int(input('''
+#                 Seleccione una opcion
+#                 1.-Clave con intentos infinitos
+#                 2.- NUmero al azar
+#                 3.-Ruleta Rusa
+#                 4.-Salir
+#                 '''))   
+#         match op:
+#             case 1:
+#                 clave_inf()
+#             case 2:
+#                 azar()
+#             case 3:
+#                 ruleta()
+#             case 4:
+#                 break
+#             case _:
+#                 print("Opcion no valida")
 
-# '''
+# # '''
 # Crear un menu de carrito con las siguientes opciones
 # 1.-Ingresar nombre del usuario
 # Sera mostrado en la boleta, con un saludo
@@ -449,14 +449,40 @@ def menu_nuevo():
  # Al finalizar, se debe mostrar cuántos empleados tienen más de 10 años de antigüedad y cuántos no
 # 
 
-antiminima=10
-mas10=0
-menos10=0
+# mas10=0
+# menos10=0
 
-while True:
-    try:
-        cant=int(input("ingrese la cantidad  de empleados"))
-    except Exception:
-        print("solo numeros")
 
-    for i in range 
+# while True:
+#     try:
+#        cant=int(input("ingrese la cantidad de empleados: "))
+#        if cant<=0:
+#            print("el numero debe ser mayor a 0")
+#            break
+       
+#     except Exception:
+#         print("solo numeros enteros")
+
+
+#     for i in range (cant):
+#         name=input(f"ingrese el nombre del {i+1} empleado :")
+#         print(f" cuantos años tiene el empleado {i+1} en la compañia?") 
+#         años=int(input("años de antiguedad:"))
+
+#         if años > 10:
+#             print(f"el empleado tiene mas de 10 años de antiguedad")
+#             mas10+=1
+#         else:
+#             print(f"el empleado tiene menos de 10 años de antiguedad")
+#             menos10+=1
+
+
+#     print("resumen")
+#     print( f"hay {mas10} empleados mayor de 10 años de antiguedad")
+#     print(f"hay {menos10} empleados con menos de 10 años de antieguedad")
+#     break
+        
+#///////////////////////////////////////////////////////////////////7
+
+
+

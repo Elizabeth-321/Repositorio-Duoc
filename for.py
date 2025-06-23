@@ -622,7 +622,7 @@ ______________________________________________________________________
 #         print("solo numeros enteros")
 
 # variacion del mismo ejercicio ____________________________________2.1
-# Compra de Juguetes en Pascua 🐰 🔹 
+# Compra de Juguetes en Pascua 🐰 
 # Preguntar la cantidad de niños que comprarán juguetes de Pascua.
 # Cada niño elige cuántos juguetes quiere comprar.
 # Dependiendo del número de juguetes, se aplican descuentos:
@@ -636,15 +636,15 @@ ______________________________________________________________________
 # Calcular el total a pagar considerando los descuentos y mostrar un resumen.
 # También mostrar quién compró más juguetes (el mayor número registrado)
 
-import random
+# import random
 
-principiante=0
-fanatico=0
-coleccionista=0
-while True:
-    cant=int("cuantos niños compraran juguetes?") 
-    for n in range(cant):
-        juguetes=random.randint(5,16)
-        print(f"el niño {n+1} comprara {juguetes} juguetes")
-        if juguetes
+# principiante=0
+# fanatico=0
+# coleccionista=0
+# while True:
+#     cant=int("cuantos niños compraran juguetes?") 
+#     for n in range(cant):
+#         juguetes=random.randint(5,16)
+#         print(f"el niño {n+1} comprara {juguetes} juguetes")
+#         if juguetes
 

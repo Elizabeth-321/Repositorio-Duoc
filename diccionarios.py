@@ -34,7 +34,7 @@
 #      "Casado": False
 #      }
 
-# print(personas[2]["numero"])
+# print(personas[2]["numero"])hfg
 
 
 # text=input("Ingrese un texto")

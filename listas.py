@@ -88,6 +88,7 @@
 #     op=int(input())
 #     match op:
 #         case 1:
+              
 #             nombres=input("ingrese su name")
 #             name.append(nombres)
 #             apellido=input("ingrese su apellido")
@@ -99,7 +100,7 @@
 #                 print(name[c], ape[c])
 #                 c+=1
 #         case 3: 
-#             busca=int(input("ingrese el name que buscara"))
+#             busca=input("ingrese el name que buscara")
 #             if busca in nombres:
 #                 print(f"el nombre {busca} esta en la lista ")
 #                 print(f"el nombre {busca}no esta en la lista")
@@ -113,50 +114,49 @@
 #agregar productos (nombre producto y precio)
 #comprar (submenu mostrando productos y precios)
 #crear boleta
-#salir
-
-# productos=["Disco SSD 1TB", "Memoria Ram 8GB", "Mouse"]
-# precios=[70000, 30000, 15000]
+#salir        #-3--------------- -2- -------------- -3
+              #0----------------1------------------2
+# productos=["pay limon", "kuchen franbuesa", "Mouse maracuya"]
+# precios=[70000,30000,15000]
 # carrito=[]
-
 # while True:
-#     print('''
-#         1.- Ingresar productos a la tienda
-#         2.- Comprar
-#         3.- Crear Boleta
-#         4.- Salir
-#           ''')
-#     op=int(input("Ingese una opcion: "))
+#     print('''Bienvenido al carrito de compras,que desea hacer? :
+          
+#        1.-Ingresar productos a la tienda
+#        2.-comprar
+#        3.- Crear boleta
+#        4.- Salir
+#          ''')
+#     op=int(input("ingrese una opcion: "))
 #     match op:
 #         case 1:
-#             pro=input("Ingrese el nombre del Producto: ")
+#             pro=input("ingrese el nombre del producto: ")
 #             productos.append(pro)
-#             pre=int(input("Ingrese el Precio: "))
+#             pre=int(input("ingrese el precio: "))
 #             precios.append(pre)
 #         case 2:
-#                 for i in range(len(productos)):
-#                     print(i+1, ".-", productos[i], "$", precios[i] )
-#                 pro=int(input("Selecione que quiere comprar: "))
-#                 carrito.append(pro-1)
-#                 print(carrito)
-#         case 3:
-#             total=0
-#             print("---------------0----------------")
-#             print("Bienvenido a PC House ")
+#             for i in range(len(productos)):#se usa len para saber los productos disponibles en la lista
+#                 print(i+1, productos[i], "$" , precios[i])#muestra el producto actual y muestra el precio que le corresponde, en la misma posición.
+#             pro=int(input("Seleccione que producto desea comprar"))
+#             carrito.append(pro -1)#Esta línea agrega el producto al carrito, pero en forma de índice. se pone-1 para que el usuario maeque 1:kuchen y no que salga 0
+#             print(carrito)
+#         case 3:#creacion de la boleta
+#             total = 0
 #             for i in carrito:
-#                   print( productos[i], "----- $", precios[i] )
-#                   total=total+precios[i]
-#             print("Es total de articulos es", len(carrito))
-#             print("Su total neto es ", total)
-#             print("Su total mas iva es ", total*1.19)
-#             print("---------------0----------------")
-
+#                 print(productos[i], precios[i])
+#                 total=total+precios[i]
+#                 print("el total de articulos es ", len(carrito))#dice cuantos productos se compraron
+#                 print("su total neto es ", total)
+#                 print("su total mas iva es", total*1.19)
+            
 #         case 4:
-#             print("Saliendo")
+#             print("saliendo")
 #             break
 #         case _:
 #             print("opcion invalida")
-    
+
+
+#     
 
 #///////////////////////////////////////////////////////
 
@@ -169,50 +169,50 @@
 # 5.- Limpiar todas las notas
 # 6.- Salir
 # '''
-# notas=[7.0,4.6,4.9, 7.0,5.6]
+notas=[7.0,4.6,4.9, 7.0,5.6]
 
-# while True:
-#     while True:
-#         try:
-#             print('''   
+while True:
+    while True:
+        try:
+            print('''   
 
-#                 1.- ingresar notas
-#                 2.- borrar nota
-#                 3.- ver notas colocadas
-#                 4.- promedio de notas, nota mayor y nota menor
-#                 5.- borrar toda las notas
-#                 6.- salir
-#                     ''')
-#             op=int(input())
-#             break
-#         except Exception:
-#             print("Debe ingreser un numero entero valido")
+                1.- ingresar notas
+                2.- borrar nota
+                3.- ver notas colocadas                 
+                4.- promedio de notas, nota mayor y nota menor
+                5.- borrar toda las notas
+                6.- salir
+                     ''')
+            op=int(input())
+            break
+        except Exception:
+            print("Debe ingreser un numero entero valido")
     
+    match op:
+        case 1: 
+            nota=int(input("ingrese la nota del alumno"))
+            notas.append(nota)
+        case 2: #i :para recorrer  la lista 
+            for num ,n in enumerate(notas):#da dos cosas en cada vuelta del bucle num:el indice(0,1,2) y notas n :7.0, 4,5
+                print(num+1, n)#le sumás 1 para que el usuario vea:1 .- 7.0-2 .- 4.5-3 .- 6.8
+            elim=int(input("seleccione cual desea eliminar"))
+            notas.pop(elim-1)#se pone -1 ya que es necesario restar para obtener indice real 
+#      #elimina 5.8 (porque está en la posición 1)   si elige:2  indice real: 2 - 1 = 1
+        case 3:
+               print(notas)
+        case 4:
+            if len(notas) == 0:#devuelve las notas que hay en la lista
+               print("No hay notas para calcular el promedio.")
+            else:#sum:suma los valores y len cuenta cuantas notas hay 
+               promedio=sum(notas)/ len(notas)
+               print("el total de notas es" , promedio)
+               print("la nota mayor es: ", max(notas))
+               print("la nota menor es: ", min(notas))
 
-#     match op:
-#         case 1:
-#             nota=float(input("ingrese la nota del alumno: "))
-#             notas.append(nota)
-#         case 2:
-#             for num, n in enumerate(notas):
-#                 print(num+1,".- ",n)
-#             elim=int(input("ingrese cual quiere eliminar: "))
-#             notas.pop(elim-1)
-#         case 3:
-#             print(notas)
-#         case 4:
-#             if len(notas) == 0:
-#                 print("No hay notas para calcular el promedio.")
-#             else:
-#                 promedio=sum(notas)/len(notas)
-#                 print(f"El promedio de las notas es: {round(promedio, 1)}")
-#                 print("la nota mayor es", max(notas))
-#                 print("la nota menor es", min(notas))
-#         case 5:
-#             notas.clear()
-#         case 6:
-#             print("saliendo...")
-#             break
-#         case _:
-#             print("ya wey escoge algo valido")
-
+        case 5:
+            notas.clear()
+        case 6:
+            print("saliendo...")
+            break
+        case _:
+            print(" escoge una opcion valida")
