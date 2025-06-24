@@ -93,8 +93,20 @@
 # # print(list_prod)
 
 #and: es una palabra clave en Python que verifica si un valor está presente en una lista, string o colección.
+#////////////////////////////////////////////////////77
 #append: agregar un element al final de la lista
-#insert:Inserta un elemento en una posición específica de la lista
+# mi_lista = [1, 2, 4, 5]
+# mi_lista.append(6)
+# print("Después de append:", mi_lista)
+# # Resultado: [1, 2, 4, 5, 6]
+# list_prod.append({"nombre": nom, "precio": pre})
+# #&////////////////////////////////////////////
+# #insert:Inserta un elemento en una posición específica de la lista,Usa insert  si se quiere que lo reciente aparezca primero
+# mi_lista.insert(2, 3)  # Insertar el número 3 en la posición 2
+# print("Después de insert:", mi_lista)
+# # Resultado: [1, 2, 3, 4, 5, 6]
+
+# ist_prod.insert(0,{"nombre":nom, "precio":pre})
 #/////////////////////////////////////////
 # pop elimina el ultimo elemento de la lista  o se puedo poner la posicion del indice
 # frutas = ["manzana", "banana", "cereza"]
@@ -112,8 +124,9 @@
 # notas = [5.5, 6.8, 4.2]
 # menor = min(notas)
 # print(menor)  # Resultado: 4.2
-
-
+#//////////////////////////////////////////7
+#islower: verifica que todos los caraterres en ua cadena estan minusculas
+#isupper verifica si todo caracteres de una cadena estan en mayuscula 
 
 #/////////////////////////////////////////////
 #sum : suma automáticamente todos los elementos numéricos de una colección como una lista o tupla.
@@ -121,7 +134,17 @@
 # resultado = sum(notas)
 # print(resultado)
 #//////////////////////////////////////////////////
-#items:
+#items:se usa con diccionarios para obtener claves y valores
+
+# producto = {
+#     "nombre": "zapato",
+#     "precio": 20000,
+#     "enOferta": False
+# }
+
+# for clave, valor in producto.items():
+#     print(clave, ":", valor)
+
 #/////////////////////////////////////////////////////
 #enumerate:Con enumerate(cuando sí querés la posición)
 #for i, nombre in enumerate(nombres):
@@ -155,47 +178,57 @@
 # precio=[20000]
 
 # list_prod=[
-#     {"nombre":"zapato", 
-#      "precio":20000, 
-#      "categoria": "vestuario",
-#      "tamaño": "mediano",
-#      "enOferta": False},
+#       {"nombre": "zapato",
+#        "precio": 20000,
+#        "categoria":"vestuario",
+#        "tamaño": "mediano",
+#        "enOferta": False}, #False indica que el producto no esta en oferta
 
-#     {"nombre":"pelota", 
-#      "precio":24000}
+#        {"nombre": "pelota",
+#         "precio": 24000}
 # ]
-#
+
+
+
+# def funcion_agregar(list_prod):
+#     nom=input("nombre del producto: ")
+#     pre=int(input("escribe el precio del producto"))
+#     list_prod.insert(0,{"nombre": nom,"precio": pre})
+#     print("producto agregado")
+# def funcion_mostrar(list_prod):
+#    for p in list_prod:#para cada producto que este dentro de la lista list_prod 
+#        print(p)
+
+# def funcion_actualizar(list_prod):
+#     for n, p in enumerate (list_prod):
+#        print(n+1,p)# se suma uno para que empieza a contar en 1 y se pone la p porque contiene los productos de la lista
+#     opc=int(input("selecione el producto a actualizar"))
+#     print(list_prod[opc-1])
+
+#     nuevopro=input("ingrese el nuevo producto")
+#     nuevopre=int(input("ingrese el precio"))
+
+#     list_prod[opc-1]["nombre"]=nuevopro #actualiza el camp onombre del producto 
+#     list_prod[opc-1]["precio"]=nuevopre#actualiza datos
+#     print("articulo actualizado")
 # while True:
-#     try:
+#    #  try:
 #         print('''
-#             1.- Agregar producto
-#             2.- Mostrar Productos
+#             1.- Agregar producto y precio
+#             2.- Mostrar producto
 #             3.- Actualizar producto
-#             4.- Borrar Producto
+#             4.- Borrar producto
 #             5.- Salir
 #             ''')
-#         op=int(input("Seleccione una opcion: "))
+#         op=int(input("seleccione una opcion"))
 #         match op:
 #             case 1:
-#                 nom=input("Ingrese el nombre del producto: ")
-#                 pre=int(input("Ingrese el precio: "))
-#                 list_prod.insert(0,{"nombre":nom, "precio":pre})
-#             case 2:
-#                 for p in list_prod:
-#                     print(p)        
-#             case 3:
-#                 # for n, p in enumerate(list_prod):
-#                 #     print(n+1, ".- ", p)
-#                 for i in range(len(list_prod)):
-#                     print(i+1, ".-", list_prod[i])
-#                 opc=int(input("Seleccione el producto a actualizar"))
-#                 print(list_prod[opc-1])
-#                 nn=input("Ingrese nuevo Nombre")
-#                 np=int(input("Ingrese nuevo Precio"))
-#                 list_prod[opc-1]["nombre"]=nn
-#                 list_prod[opc-1]["precio"]=np
-#                 print("Articulo actualizado!")
-#             case 5:
+#                funcion_agregar(list_prod)
+#             case 2: 
+#                funcion_mostrar(list_prod)
+#             case 3:#i / i es el inidice 0-1-2 y p el producto en esa posicion
+#                funcion_actualizar(list_prod)
+# #             case 5:
 #                 break
 #             case _:
 #                 print("Opcion invalida")
@@ -205,16 +238,6 @@
 # #///////////////////////////////////////////////////////////
 
 
-# '''Crear un programa para calcular un porcetaje descuento
-# Pedir al usuario  el precio , y el descuento 
-# a aplicar. Mostar los resultados
-
-# Hacer otro para calcular el IVA
-
-# '''
-
-
-
 # # print(prod_sport[0]["nombre"])
 
 # # print(prod_sport)
@@ -222,7 +245,141 @@
 # # # prod_sport.insert(0,{"nombre":"paleta", "precio":14000})
 
 # # print(prod_sport)
+#/////////////////////////////////////7
+# validaciones para agregar un producto  
+# que se un numero entero:
+# if not precio.isdigit():#validacion para que sea solo numero entero
+   #    print("solo numeros enteros")  # sirve solo si no tuviera un input 
+   #    return 
+   # precio=int(precio)
+#validacion para que no ingrese un numero negativo
+   # if precio<0:           
+   #     print("no puede ingresar un numero negativo") 
+   #     return
 
+#///////////////////////////////////////////////////////
+# Gestion de productos
+list_prod=[
+         {"nombre": "Silla",
+           "precio": 2500},
+
+         {"nombre": "mesa",
+           "precio": 5000}
+         
+]
+def funcion_agregar_productos(list_prod):
+#validaciones 
+ 
+   nombre=input("ingrese el producto que desea agregar")
+   if not nombre:
+      print("el nombre no puede estar vacio")
+      return
+   
+     
+   precio=int(input("ingrese el precio  del producto"))
+   if precio == 0:
+    print(" El precio no puede ser cero.")
+    return
+   # if not precio.isdigit():#validacion para que sea solo numero entero
+   #    print("solo numeros enteros")  # sirve solo si no tuviera un input 
+   #    return 
+   # precio=int(precio)
+   # if precio<0:            #no se usario negativo en cuando a un precio 
+   #     print("no puede ingresar un numero negativo") 
+   #     return
+   list_prod.insert(0,{"nombre": nombre, "precio": precio})
+   print("producto agregado correctamente,lista actual", list_prod)
+
+
+def funcion_mostrar_productos(list_prod):
+     
+     if not list_prod:
+         print("la lista esta vacia")
+   #   if len(list_prod)==0:
+   #      print("vacia") #otra manera de hacerlo1
+     for p in list_prod:
+       print(p)
+def funcion_actualizar_productos(list_prod):
+   if not list_prod:
+      print("no hay productos para actualizar")
+      return
+   
+   for c,p in enumerate(list_prod):
+      print(c+1,p)
+   act=int(input("ingrese el producto que desea actualizar: "))
+   
+   
+   print(list_prod[act-1])#se ajusta la eleccion del usuario para coincida con el indice 
+ 
+   
+   nuevoname=input("como desea llamar al nuevo producto: ")
+   if not  nuevoname:
+      print("Debe ingresar un nombre ")
+   nuevoprecio=int(input("ingresa su precio : "))
+   if nuevoprecio<=0:
+      print("De ingresar un precio mayor a 0")
+      print(f" Se actualizo {c+1} producto ")
+
+      list_prod[act -1]["precio"]=nuevoprecio
+      list_prod[act -1]["nombre"]=nuevoname
+
+
+   #validacion 
+def funcion_borrar_productos(list_prod): 
+   if not list_prod:
+     print("no hay productos para eliminar")
+     return 
+  
+   for cada, producto in enumerate(list_prod):
+      print(f"{cada + 1}. {producto['nombre']} - ${producto['precio']}")
+
+   elim=int(input("ingrese el producto que desea eliminar"))
+
+   list_prod.pop(elim -1)
+   print("se a eliminado este producto", list_prod)
+
+
+
+while True: 
+   
+   try:
+         print('''
+               
+      1.-Agregar producto
+      2.-Mostrar productos
+      3.-actualizar
+      4.-borrar
+      5.-salir
+    
+               ''')
+         op=int(input("seleccione una opcion"))
+
+         match op:
+               
+            case 1:
+               funcion_agregar_productos(list_prod)
+            case 2:
+               funcion_mostrar_productos(list_prod)
+            case 3:
+               funcion_actualizar_productos(list_prod)
+            case 4:
+               funcion_borrar_productos(list_prod)
+                                       
+
+            case 5:
+               print("Saliendo")
+               break
+            case _:
+               print("opcion invalida") 
+   except Exception as e :
+         print("el error es:" ,e)
+
+
+
+
+
+
+#//////////////////////////////////////////////////////7
 # prod_college=[
 #     {"nombre":"lapiz", 
 #      "precio":400},
@@ -516,5 +673,5 @@
 #5.- mostrar estadisticas: ulyimo vehiculo ingresado y total en garage
 # 6.- Salir
 
-#usar funciones con argumento para validar y para poder llamar 
+# usar funciones con argumento para validar y para poder llamar 
 # las acciones dentro del menu
